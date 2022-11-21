@@ -1,0 +1,390 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 62.5%;
+  user-select: none; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: linear-gradient(-45deg, #323232, #0a0a0a);
+  height: 100vh;
+  color: #fafafa;
+  user-select: none;
+  overflow: hidden; }
+
+.off {
+  display: none !important; }
+
+.menu i {
+  color: gainsboro;
+  font-size: 2rem;
+  margin: .5rem 1rem;
+  padding: 1rem;
+  border-radius: 50%; }
+  .menu i:hover {
+    background-color: #323232;
+    cursor: pointer; }
+
+.spiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%; }
+  .spiner .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem; }
+  .spiner .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: .15rem solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent; }
+  .spiner .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s; }
+  .spiner .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s; }
+  .spiner .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s; }
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+.gastoDiaDetalle {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh; }
+  .gastoDiaDetalle h2 {
+    font-size: 2rem;
+    width: 35rem;
+    text-align: center;
+    border-bottom: 1px solid #323232;
+    padding: 1rem; }
+  .gastoDiaDetalle .catFilter, .gastoDiaDetalle .monthFilter {
+    height: 3.5rem;
+    width: 100%;
+    overflow-x: scroll;
+    display: flex; }
+    .gastoDiaDetalle .catFilter .catBut, .gastoDiaDetalle .monthFilter .catBut {
+      user-select: none;
+      cursor: pointer;
+      background-color: #282828;
+      color: white;
+      border-radius: 1rem;
+      border-style: none;
+      padding: .5rem 1rem;
+      margin: .5rem;
+      font-size: 1rem;
+      height: auto;
+      white-space: nowrap; }
+      .gastoDiaDetalle .catFilter .catBut:hover, .gastoDiaDetalle .monthFilter .catBut:hover {
+        color: black;
+        background-color: white; }
+    .gastoDiaDetalle .catFilter .butSelected, .gastoDiaDetalle .monthFilter .butSelected {
+      color: black;
+      background-color: white; }
+    .gastoDiaDetalle .catFilter::-webkit-scrollbar, .gastoDiaDetalle .monthFilter::-webkit-scrollbar {
+      background-color: rgba(0, 0, 0, 0);
+      height: 0; }
+    .gastoDiaDetalle .catFilter::-webkit-scrollbar-thumb, .gastoDiaDetalle .monthFilter::-webkit-scrollbar-thumb {
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.2); }
+  .gastoDiaDetalle .spendDailyList {
+    overflow-y: scroll;
+    font-size: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 70vh; }
+    .gastoDiaDetalle .spendDailyList .df-r {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center; }
+    .gastoDiaDetalle .spendDailyList .df-c {
+      display: flex;
+      flex-direction: column;
+      width: 100%; }
+    .gastoDiaDetalle .spendDailyList .mp {
+      margin: .5rem 1rem;
+      padding: .5rem .2rem; }
+    .gastoDiaDetalle .spendDailyList .spendCard {
+      padding: 1rem;
+      margin: .4rem 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 1rem; }
+      .gastoDiaDetalle .spendDailyList .spendCard:hover {
+        background-color: rgba(255, 255, 255, 0.2); }
+    .gastoDiaDetalle .spendDailyList .detalles {
+      font-size: 1.5rem; }
+    .gastoDiaDetalle .spendDailyList::-webkit-scrollbar {
+      background-color: rgba(0, 0, 0, 0);
+      width: .5rem; }
+    .gastoDiaDetalle .spendDailyList::-webkit-scrollbar-thumb {
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.2); }
+    .gastoDiaDetalle .spendDailyList i[data-id] {
+      cursor: pointer; }
+
+.container {
+  padding: 0 .5rem;
+  width: 100%;
+  max-width: calc(((100vh - 1rem)/8)*4);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1rem 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "fecha fecha fecha" "monto monto monto" "b1 b2 b3" "b4 b5 b6" "b7 b8 b9" "bPunto b0 bb" ". ok .";
+  align-items: center;
+  justify-items: center; }
+  .container .fecha {
+    grid-area: fecha; }
+  .container .monto {
+    grid-area: monto; }
+  .container .b1 {
+    grid-area: b1; }
+  .container .b2 {
+    grid-area: b2; }
+  .container .b3 {
+    grid-area: b3; }
+  .container .b4 {
+    grid-area: b4; }
+  .container .b5 {
+    grid-area: b5; }
+  .container .b6 {
+    grid-area: b6; }
+  .container .b7 {
+    grid-area: b7; }
+  .container .b8 {
+    grid-area: b8; }
+  .container .b9 {
+    grid-area: b9; }
+  .container .bPunto {
+    grid-area: bPunto; }
+  .container .b0 {
+    grid-area: b0; }
+  .container .bb {
+    grid-area: bb; }
+  .container .ok {
+    grid-area: ok; }
+  .container .monto {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #464646;
+    border-radius: .5rem;
+    padding: 1rem; }
+    .container .monto p {
+      width: 100%;
+      text-align: right;
+      font-size: calc(((100vh - 1rem)/8)/3);
+      padding-right: .5rem; }
+    .container .monto .aj {
+      font-size: calc(((100vh - 1rem)/8)/2.5); }
+  .container .bot {
+    width: calc((100vh - 1rem)/8);
+    height: calc((100vh - 1rem)/8);
+    background-color: #323232;
+    color: white;
+    font-weight: 900;
+    font-size: calc(((100vh - 1rem)/8)/2.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: .2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+    .container .bot:hover {
+      background-color: #646464; }
+  .container .sim {
+    background-color: #464646;
+    font-size: calc(((100vh - 1rem)/8)/2.5); }
+  .container .ok {
+    background-color: #fafafa;
+    color: #323232;
+    font-size: calc(((100vh - 1rem)/8)/2.1);
+    padding-top: .3rem; }
+  .container .fecha p {
+    font-size: calc(((100vh - 1rem)/8)*4/30); }
+    .container .fecha p i {
+      font-size: calc(((100vh - 1rem)/8)*4/28); }
+
+.origenSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; }
+  .origenSection .oriCard {
+    display: flex;
+    flex-direction: row; }
+    .origenSection .oriCard .oriDetail {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: .2rem; }
+      .origenSection .oriCard .oriDetail .oriName {
+        font-size: 2rem; }
+      .origenSection .oriCard .oriDetail .oriType {
+        font-size: 1rem;
+        font-style: italic; }
+    .origenSection .oriCard .ico {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      margin: 1rem; }
+  .origenSection button {
+    border-style: none;
+    border-radius: 1rem;
+    width: 35rem;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #323232;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+    .origenSection button:hover {
+      background-color: black;
+      background-color: #464646; }
+  .origenSection h2 {
+    font-size: 2rem;
+    width: 35rem;
+    text-align: center;
+    border-bottom: 1px solid #323232;
+    padding: 1rem; }
+
+.categSection {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; }
+  .categSection h2 {
+    font-size: 2rem;
+    width: 35rem;
+    text-align: center;
+    border-bottom: 1px solid #323232;
+    padding: 1rem; }
+  .categSection .categList {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; }
+  .categSection .cat {
+    background-color: rgba(0, 0, 0, 0);
+    border-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem; }
+    .categSection .cat .catIcon {
+      width: 8rem;
+      height: 8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+      .categSection .cat .catIcon i {
+        color: white;
+        font-size: 4rem; }
+    .categSection .cat .catName {
+      font-size: 2rem;
+      padding: .5rem; }
+    .categSection .cat .catGasto {
+      font-size: 1.5rem;
+      padding: 0.1rem;
+      font-weight: 900; }
+    .categSection .cat .catPpto {
+      font-size: 1rem;
+      padding: 0.1rem; }
+    .categSection .cat button {
+      width: 8rem;
+      height: 14rem;
+      position: absolute;
+      border-style: none;
+      background-color: rgba(0, 0, 0, 0); }
+      .categSection .cat button:hover {
+        cursor: pointer; }
+  .categSection .desc {
+    width: 100%;
+    max-width: 80rem;
+    padding: 0.5rem; }
+    .categSection .desc input {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      border-style: none;
+      background-color: rgba(255, 255, 255, 0.95); }
+
+.gastoOkSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  animation: colors 2s none; }
+  .gastoOkSection .cargaOK {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 10rem;
+    background-color: green;
+    border-radius: 50%;
+    animation: mymove 2s none; }
+    .gastoOkSection .cargaOK i {
+      color: white;
+      font-size: 5rem; }
+
+@keyframes mymove {
+  0% {
+    width: 10rem;
+    height: 10rem;
+    opacity: 0%; }
+  30% {
+    width: 10rem;
+    height: 10rem;
+    opacity: 100%; }
+  40% {
+    width: 8rem;
+    height: 8rem; }
+  100% {
+    width: 100%;
+    height: 100vw; } }
+
+@keyframes colors {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 100%; }
+  60% {
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 100%; }
+  100% {
+    opacity: 0%;
+    background-color: green; } }

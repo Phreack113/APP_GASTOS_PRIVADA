@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+        <!-- fontawesome -->
+        <script defer src="https://kit.fontawesome.com/51cbdb5a32.js" crossorigin="anonymous"></script>
+        <!-- scripts del proyecto -->
+        <script defer src="./scripts/arraysPrueba.js"></script>
+        <script defer src="./scripts/objGasto.js"></script>
+        <script defer src="./scripts/teclado.js"></script>
+        <script defer src="./scripts/renderCategories.js"></script>
+        <script defer src="./scripts/renderMediosPago.js"></script>
+        <script defer src="./scripts/renderOkScreen.js"></script>
+        <script defer src="./scripts/renderDailySpend.js"></script>
+        <script defer src="./scripts/connectionSpreadSheet.js"></script>
+        <script defer src="./scripts/index.js"></script>
+        <script defer src="./scripts/menu.js"></script>
+        <script defer src=""></script>
+        <title>Control de gastos</title>
+</head>
+<body>
+<section class="menu">
+    <i class="fa-solid fa-keyboard keyboard"></i>
+    <i class="fa-solid fa-sliders gastosCat"></i>
+    <i class="fa-solid fa-calendar-days gastosDia"></i>
+</section>
+<section class="montoSection">
+
+    <div class="container">
+        <div class="fecha">
+            <p></p>
+        </div>
+        <div class="monto">
+            <i class="fa-solid fa-money-bill aj"></i>
+            <p>0</p>
+            <div>
+                <i class="fa-solid fa-xmark aj"></i>
+                <div class="spiner off">
+                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="b1 bot num">1</div>
+        <div class="b2 bot num">2</div>
+        <div class="b3 bot num">3</div>
+        <div class="b4 bot num">4</div>
+        <div class="b5 bot num">5</div>
+        <div class="b6 bot num">6</div>
+        <div class="b7 bot num">7</div>
+        <div class="b8 bot num">8</div>
+        <div class="b9 bot num">9</div>
+        <div class="bPunto bot sim">.</div>
+        <div class="b0 bot num">0</div>
+        <div class="bb bot sim"><i class="fa-solid fa-delete-left bb"></i></div>
+        <div class="ok bot okBot">
+            <i class="fa-solid fa-check okBot"></i>
+        </div>
+      </div>
+</section>
+<section class="origenSection off">
+<h2>Seleccione medio de pago</h2>
+</section>
+<section class="categSection off">
+    <h2>Seleccione la categoría</h2>
+    <div class="desc off">
+        <input type="text" name="desc" id="desc" placeholder="Descripción (opcional)">
+    </div>
+    <div class="categList"></div>
+</section>
+<section class="gastoOkSection off">
+    <div class="cargaOK">
+        <i class="fa-solid fa-check okBot"></i>
+    </div>
+</section>
+<section class="gastoDiaDetalle off">
+    <h2>Gastos diarios</h2>
+    <div class="catFilter"></div>
+    <div class="monthFilter"></div>
+    <div class="spendDailyList"></div>
+</section>
+</body>
+</html>
+
+
+
+
