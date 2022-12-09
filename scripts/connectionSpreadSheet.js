@@ -8,7 +8,7 @@ const req = async (param) => {
     try{
         x.classList.add('off');
         spiner.classList.remove('off');
-        const url = 'https://script.google.com/macros/s/AKfycbxuS8ViXPQuZZ97BNlqZkQEQsj_emJzKXV4cpRZwwLOEgZCJct2GrYkCal-lgvsaWm_/exec';
+        const url = 'https://script.google.com/macros/s/AKfycbwW2e0phOqV8qvTkwbEX9S2l1Y1MIqD3G9gmo4_s4_lZe4K3psFMFZnP_yTly1hKo_u/exec';
         const res = await fetch(url + param);
         const resJson = await res.json(); 
         return resJson;
